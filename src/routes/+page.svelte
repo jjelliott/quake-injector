@@ -3,7 +3,7 @@
 	import { database, selectedEntry } from '../lib/Database.js';
 	import { invoke } from '@tauri-apps/api/tauri';
 	import 'font-awesome/css/font-awesome.min.css';
-	import '../app.scss'
+	import '../app.scss';
 
 	$: loaded = false;
 
@@ -26,42 +26,53 @@
 
 
 </script>
+
+<div id='page-body' class='container'>
 {#if loaded}
-	<div id='page-body'>
-		<div id='table-column'>
-			<MapTable selectedId={selectedId} />
-		</div>
-		{#if selectedId}
-			<div style='max-width: 25%;'>
-				<div style='max-height: 50%'>
-					{#if img}
-						<img alt='{`Preview screenshot for ${selectedName}`}' style='max-width: 100%'
-								 src='data:image/jpeg;base64, {img}' />
-					{:else }
+		<div class='columns'>
+			<div id='table-column' class='column col-9'>
+				<MapTable selectedId={selectedId} />
+			</div>
+			{#if selectedId}
+				<div class='column col-3'>
+					<div style='max-height: 50%'>
+						{#if img}
+							<img alt='{`Preview screenshot for ${selectedName}`}' style='max-width: 100%'
+									 src='data:image/jpeg;base64, {img}' />
+						{:else }
 
 							<i class='fa fa-pulse fa-spinner fa-3x' />
 
-					{/if}
-					<div>{@html (selectedDescription || "")}</div>
+						{/if}
+						<div>{@html (selectedDescription || "")}</div>
+					</div>
+					<div id='action-buttons'>
+						<button id='install-button'>Install</button>
+						<select id='map-select'></select>
+						<button id='play'>Play map</button>
+					</div>
 				</div>
-			</div>
 
-		{/if}
-	</div>
+			{/if}
+		</div>
+
 {:else }
-	<i class='fa fa-pulse fa-spinner'></i>
-	<p>Loading database...</p>
+	<div class='text-center'>
+		<i class='fa fa-pulse fa-3x fa-spinner'></i>
+		<p>Loading database...</p>
+	</div>
 {/if}
-
+</div>
 <style>
     #page-body {
-        display: flex;
+        /*display: flex;*/
         overflow: hidden;
         height: 100vh;
     }
 
     #table-column {
-        max-width: 75%;
+        /*max-width: 75%;*/
+        max-height: 100vh;
         overflow-y: scroll;
     }
 </style>

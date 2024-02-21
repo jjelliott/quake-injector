@@ -10,7 +10,7 @@
 	});
 
 </script>
-<table style='width: 100%'>
+<table style='width: 100%; border-collapse: collapse'>
 	<thead>
 		<tr>
 			<th>Name</th>

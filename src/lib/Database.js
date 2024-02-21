@@ -18,6 +18,7 @@ export const getDb = async () => {
 export const database = writable([]);
 loadDb().then(() => {
 	console.log(db)
+	db.sort((a, b) => a.author.localeCompare(b.author))
 	database.set(db);
 });
 
