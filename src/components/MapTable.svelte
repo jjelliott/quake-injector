@@ -15,13 +15,14 @@
 		<tr>
 			<th>Name</th>
 			<th style='max-width: 10%'>Author(s)</th>
+			<th>Source</th>
 			<th>Release Date</th>
 			<th style='max-width: 10%'>Tags</th>
 		</tr>
 	</thead>
 	<tbody>
 		{#each db_value as entry}
-			<MapTableRow entry={entry} selected={selectedId && selectedId == entry.id} />
+			<MapTableRow entry={entry} selected={selectedId && selectedId === entry.id} />
 
 		{/each}
 	</tbody>

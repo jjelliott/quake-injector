@@ -8,6 +8,7 @@
 		on:click={()=>{selectedEntry.set(entry); console.log("changed selected entry")}}>
 	<td>{entry.title}</td>
 	<td style='max-width: 10%'>{entry.author}</td>
+	<td>Quaddicted</td> <!-- TODO: implement other sources -->
 	<td>{entry.date}</td>
 	<td style='max-width: 10%'>{entry.tags.join(", ")}</td>
 </tr>
