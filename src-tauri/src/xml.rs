@@ -1,5 +1,5 @@
 use std::io::Read;
-use std::os::windows::fs::MetadataExt;
+//use std::os::windows::fs::MetadataExt;
 use serde_derive::{Deserialize, Serialize};
 
 
@@ -123,8 +123,8 @@ pub fn get_db() -> Vec<SlimmedFile> {
 //     "##).unwrap();
     // println!("{fake_records:?}");
     // return fake_records.files;
-    let mut file = std::fs::File::options().create(true).read(true).write(true).open(format!("./cache/db.xml")).unwrap();
-    println!("{}", file.metadata().unwrap().last_write_time());
+   let mut file = std::fs::File::options().create(true).read(true).write(true).open(format!("./cache/db.xml")).unwrap();
+  //  println!("{}", file.metadata().unwrap().last_write_time());
     // println!("{}", std::time::UNIX_EPOCH.elapsed().unwrap().as_millis() - u128::from(file.metadata().unwrap().last_write_time()) );
     // if file.metadata().unwrap().last_write_time() == 0 {
     download_db();
