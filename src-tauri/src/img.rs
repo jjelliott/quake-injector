@@ -1,5 +1,7 @@
+use std::fs;
 use std::fs::File;
 use std::io::Read;
+use reqwest::StatusCode;
 
 #[tauri::command]
 pub fn get_image(map_id: String) -> String {
@@ -17,10 +19,15 @@ pub fn get_image(map_id: String) -> String {
 }
 
 fn download_image(map_id: String) {
-    let mut file = File::options().create(true).read(true).write(true).open(format!("./cache/{}.jpg", map_id)).unwrap();
+    let mut path = format!("./cache/{}.jpg", map_id);
+    let mut file = File::options().create(true).read(true).write(true).open(&mut path).unwrap();
     println!("image empty, calling quaddicted");
     let mut response = reqwest::blocking::get(format!("https://quaddicted.com/reviews/screenshots/{}.jpg", map_id)).unwrap();
     println!("got image, copying to file");
-    response.copy_to(&mut file).unwrap();
-    println!("file populated");
+    if response.status() == StatusCode::OK {
+        response.copy_to(&mut file).unwrap();
+        println!("file populated");
+    } else {
+        fs::remove_file(path).expect("TODO: panic message");
+    }
 }
