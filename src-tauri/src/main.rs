@@ -6,10 +6,13 @@ mod xml;
 mod img;
 use xml::{get_db};
 use img::{get_image};
-
+#[tauri::command]
+fn greet(name: &str) -> String {
+    format!("Hello, {}! You've been greeted from Rust!", name)
+}
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![get_db, get_image])
+        .invoke_handler(tauri::generate_handler![get_db, get_image, greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
