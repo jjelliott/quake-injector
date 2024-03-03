@@ -123,12 +123,12 @@ pub fn get_db() -> Vec<SlimmedFile> {
 //     "##).unwrap();
     // println!("{fake_records:?}");
     // return fake_records.files;
-   let mut file = std::fs::File::options().create(true).read(true).write(true).open(format!("./cache/db.xml")).unwrap();
+   let mut file = std::fs::File::options().read(true).open(format!("./cache/db.xml")).unwrap();
   //  println!("{}", file.metadata().unwrap().last_write_time());
     // println!("{}", std::time::UNIX_EPOCH.elapsed().unwrap().as_millis() - u128::from(file.metadata().unwrap().last_write_time()) );
-    // if file.metadata().unwrap().last_write_time() == 0 {
+    if !file.metadata().unwrap().is_file() {
     download_db();
-    // }
+    }
     println!("reading file");
     let mut str: String = String::from("");
     file.read_to_string(&mut str).expect("TODO: panic message");
