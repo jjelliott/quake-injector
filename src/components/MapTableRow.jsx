@@ -9,10 +9,10 @@ function MapTableRow({entry, selected, setSelectedEntry}) {
         setSelectedEntry(entry);
     }}>
         <td>{entry.title}</td>
-        <MaxSizeColumn>{entry.author}</MaxSizeColumn>
+        <td className="author-column">{entry.author}</td>
         <td>Quaddicted</td>
         <td>{entry.date}</td>
-        <MaxSizeColumn>{entry.tags.join(", ")}</MaxSizeColumn>
+        <td className="tag-column">{entry.tags.join(", ")}</td>
     </tr>
 }
 

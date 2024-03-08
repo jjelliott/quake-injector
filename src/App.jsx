@@ -1,10 +1,10 @@
-import {createContext, useEffect, useState} from "react";
-import reactLogo from "./assets/react.svg";
+import {useEffect, useState} from "react";
 import {invoke} from "@tauri-apps/api/tauri";
 import "./App.css";
-import {appWindow} from "@tauri-apps/api/window";
 import Contexts from "./lib/Contexts.js";
 import MapTable from "./components/MapTable.jsx";
+import MapDisplay from './components/MapDisplay.jsx';
+import ButtonSection from "./components/ButtonSection.jsx";
 
 function App() {
     const [greetMsg, setGreetMsg] = useState("");
@@ -32,7 +32,8 @@ function App() {
                                       setSelectedEntry={setSelectedEntry}/>
                         </div>
                         <div id='display-column' className='column col-3'>
-
+                            <MapDisplay/>
+                            <ButtonSection/>
                         </div>
                     </div>
                 </div>

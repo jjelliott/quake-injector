@@ -8,7 +8,7 @@ function MapTable({selectedId, setSelectedEntry}) {
     if (!db || db.length === 0){
         return "loading..."
     } else {
-        return <table style={{width: '100%', borderCollapse: 'collapse'}}>
+        return <table style={{ borderCollapse: 'collapse'}}>
             <thead>
             <tr>
                 <th>Name</th>

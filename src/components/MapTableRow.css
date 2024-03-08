@@ -1,6 +1,6 @@
 td {
     /*margin: 3px;*/
-    padding: 3px;
+    padding: 5px;
 }
 
 tr.selected > td {
@@ -19,4 +19,16 @@ tr {
 
 tr > td {
     border: gray 1px solid;
-}er>
+}
+
+.tag-column{
+    max-width: 10%;
+    font-size: x-small;
+}
+.author-column{
+    font-size: small;
+}
+
+table {
+    font-size: small;
+}

@@ -11,8 +11,16 @@
   height: 100vh;
 }
 
-#table-column {
+.column {
   /*max-width: 75%;*/
   max-height: 100vh;
+  /*overflow-y: scroll;*/
+}
+#table-column{
+  max-width: 1000px;
   overflow-y: scroll;
+}
+
+#display-column{
+  min-width: 200px;
 }
