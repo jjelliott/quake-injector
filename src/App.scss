@@ -5,22 +5,24 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafb);
 }
+
 #page-body {
   /*display: flex;*/
   overflow: hidden;
   height: 100vh;
 }
 
-.column {
-  /*max-width: 75%;*/
+//.column {
+//  /*max-width: 75%;*/
+//  max-height: 100vh;
+//  /*overflow-y: scroll;*/
+//}
+#table-column {
   max-height: 100vh;
-  /*overflow-y: scroll;*/
-}
-#table-column{
-  max-width: 1000px;
   overflow-y: scroll;
 }
 
-#display-column{
-  min-width: 200px;
-}
+//
+//#display-column{
+//  min-width: 200px;
+//}

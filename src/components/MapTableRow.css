@@ -21,14 +21,29 @@ tr > td {
     border: gray 1px solid;
 }
 
-.tag-column{
-    max-width: 10%;
-    font-size: x-small;
-}
-.author-column{
+.table-column {
+
+    text-overflow: ellipsis;
+    /*max-width: 10vw;*/
     font-size: small;
+    overflow: hidden;
+    /*word-wrap: break-word;*/
 }
+
+.tag-column {
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /*max-width: 10vw;*/
+    font-size: x-small;
+    word-wrap: break-word;
+}
+
 
 table {
     font-size: small;
+}
+
+.entry-row {
+    max-height: 337px;
 }
