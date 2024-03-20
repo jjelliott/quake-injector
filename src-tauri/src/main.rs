@@ -2,9 +2,11 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 
-mod xml;
+mod map_source;
 mod img;
-use xml::{get_db};
+mod quaddicted;
+
+use map_source::{get_db};
 use img::{get_image};
 fn main() {
     tauri::Builder::default()
