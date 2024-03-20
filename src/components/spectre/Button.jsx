@@ -13,6 +13,6 @@ Button.propTypes = {
   onClick: PropTypes.func
 };
 
-const InputGroupButton = ({color, children}) => <Button color={color} groupBtn={true}>{children}</Button>;
+const InputGroupButton = ({color, children, onClick}) => <Button onClick={onClick} color={color} groupBtn={true}>{children}</Button>;
 
 export {Button, InputGroupButton};
