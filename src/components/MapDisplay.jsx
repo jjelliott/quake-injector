@@ -7,7 +7,7 @@ import {navigate} from "../lib/QuaddictedLink.js";
 function MapDisplay() {
 
   const [img, setImg] = useState();
-  const {selectedEntry} = useContext(Contexts.SelectedEntry);
+  const {selectedEntry} = useContext(Contexts.Database);
   const [imgLoading, setImgLoading] = useState(false);
 
   useEffect(() => {

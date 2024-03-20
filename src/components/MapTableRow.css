@@ -21,22 +21,31 @@ tr > td {
     border: gray 1px solid;
 }
 
-.table-column {
-
+.id-column {
     text-overflow: ellipsis;
-    /*max-width: 10vw;*/
+    max-width: 5vw;
     font-size: small;
     overflow: hidden;
     /*word-wrap: break-word;*/
+    text-wrap: nowrap;
+}
+.table-column {
+
+    text-overflow: ellipsis;
+    max-width: 10vw;
+    font-size: small;
+    overflow: hidden;
+    /*word-wrap: break-word;*/
+    text-wrap: nowrap;
 }
 
 .tag-column {
-
     text-overflow: ellipsis;
     overflow: hidden;
-    /*max-width: 10vw;*/
+    max-width: 10vw;
     font-size: x-small;
     word-wrap: break-word;
+    text-wrap: nowrap;
 }
 
 

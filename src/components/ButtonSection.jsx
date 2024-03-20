@@ -1,16 +1,16 @@
 import {Button, InputGroupButton} from "./spectre/Button.jsx";
 import Contexts from "../lib/Contexts.ts";
 import {useContext, useEffect, useState} from "react";
+import {invoke} from "@tauri-apps/api/tauri";
 
 
 function ButtonSection() {
-  const {selectedEntry: currentSelection} = useContext(Contexts.SelectedEntry);
+  const {selectedEntry: currentSelection} = useContext(Contexts.Database);
   const [selectedMap, setSelectedMap] = useState();
   useEffect(() => {
     if (currentSelection)
       setSelectedMap(currentSelection.maps ? currentSelection.maps[0] : currentSelection.id);
   }, [currentSelection]);
-  console.log(selectedMap);
   if (currentSelection) {
     return <div>
       <div className="input-group">

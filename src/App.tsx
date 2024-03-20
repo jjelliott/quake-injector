@@ -14,16 +14,14 @@ function App() {
   useEffect(() => {
     Contexts.fetch().then((loaded: DbEntry[]) => {
       setDb(loaded);
-      console.log(loaded);
     });
   }, []);
 
-  return <Contexts.SelectedEntry.Provider value={{selectedEntry, setSelectedEntry}}>
+  return <Contexts.Database.Provider value={{db, setDb, selectedEntry, setSelectedEntry}}>
     <div id='page-body' className='container' style={{padding: "0"}}>
       <div className='columns col-gapless'>
         <div id='table-column' className='column col-9 col-md-8'>
-          <MapTable db={db}
-                    setDb={setDb}/>
+          <MapTable/>
         </div>
         <div id='display-column' className='column col-3 col-md-4'>
           <MapDisplay/>
@@ -31,7 +29,7 @@ function App() {
         </div>
       </div>
     </div>
-  </Contexts.SelectedEntry.Provider>;
+  </Contexts.Database.Provider>;
 }
 
 export default App;
