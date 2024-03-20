@@ -25,6 +25,8 @@ function ButtonSection() {
         </select>
         <InputGroupButton color="success" onClick={() => {
           // TODO: invoke("launch_map")
+          console.log("calling launch...");
+          invoke("launch_map", {packageId: currentSelection.id, mapName: selectedMap});
         }}>Play</InputGroupButton>
       </div>
     </div>;
