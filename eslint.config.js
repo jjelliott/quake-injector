@@ -11,7 +11,7 @@ export default tsc.config(
   js.configs.recommended,
   ...tsc.configs.recommended,
   {
-    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    files: ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
     plugins: {
       "react": react,
       "@stylistic/js": stylisticJs
@@ -36,6 +36,7 @@ export default tsc.config(
       ...jsxRuntime.rules,
       "@stylistic/js/semi": ["error", "always"],
       // "no-unused-vars": "error",
-      "react/prop-types": 0
+      "react/prop-types": 0,
+      "no-console": "warn"
     }
   });
