@@ -27,7 +27,7 @@ tr > td {
     font-size: small;
     overflow: hidden;
     /*word-wrap: break-word;*/
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
 .table-column {
 
@@ -36,7 +36,7 @@ tr > td {
     font-size: small;
     overflow: hidden;
     /*word-wrap: break-word;*/
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .tag-column {
@@ -45,9 +45,12 @@ tr > td {
     max-width: 10vw;
     font-size: x-small;
     word-wrap: break-word;
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
-
+.selected .tag-column, .selected .id-column, .selected .table-column {
+    /*text-wrap: pretty;*/
+    white-space: pre-wrap;
+}
 
 table {
     font-size: small;

@@ -6,7 +6,7 @@ import {invoke} from "@tauri-apps/api/tauri";
 
 function ButtonSection() {
   const {selectedEntry: currentSelection} = useContext(Contexts.Database);
-  const [selectedMap, setSelectedMap] = useState();
+  const [selectedMap, setSelectedMap] = useState("");
   useEffect(() => {
     if (currentSelection)
       setSelectedMap(currentSelection.maps ? currentSelection.maps[0] : currentSelection.id);
@@ -26,7 +26,7 @@ function ButtonSection() {
         <InputGroupButton color="success" onClick={() => {
           // TODO: invoke("launch_map")
           console.log("calling launch...");
-          invoke("launch_map", {packageId: currentSelection.id, mapName: selectedMap});
+          invoke("launch_map", {packageId: currentSelection.id, source: currentSelection.source, mapName: selectedMap});
         }}>Play</InputGroupButton>
       </div>
     </div>;

@@ -6,4 +6,6 @@ export class DbEntry {
     tags: string[];
     source: string;
     user_rating: number;
+    maps: string[];
+    image_urls: string[];
 }

@@ -3,11 +3,9 @@
 
 
 mod map_source;
-mod img;
 mod quaddicted;
 
 use map_source::{get_db};
-use img::{get_image};
 use std::process::Command;
 
 
@@ -19,7 +17,7 @@ fn launch_map(package_id: String, map_name: String){
 }
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![get_db, get_image, launch_map])
+        .invoke_handler(tauri::generate_handler![get_db, launch_map])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
